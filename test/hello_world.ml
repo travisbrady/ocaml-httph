@@ -4,11 +4,10 @@ let hack () =
     "hello, world!"
 
 let hack2 request =
-    (*
     let mth = Httph.http_request_method request in
-*)
-    printf "HOST %s\n%!" (Httph.http_request_header request "HOST");
-    "this and that"
+    match mth with
+    | "GET" -> "GOT IT " ^ (Httph.http_request_target request)
+    | _ -> "NOTAGET"
 
 let () =
     let hr = Httph.http_response_init () in

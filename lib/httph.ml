@@ -11,6 +11,7 @@ external http_request_method : _http_request -> string ="caml_http_request_metho
 external http_request_body : _http_request -> string ="caml_http_request_body"
 external http_request_target : _http_request -> string = "caml_http_request_target"
 external http_request_header : _http_request -> string -> string = "caml_http_request_header"
+external http_request_has_flag : _http_request -> bool = "caml_http_request_has_flag"
 
 external _http_server_init : int -> unit = "caml_http_server_init"
 

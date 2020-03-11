@@ -19,6 +19,11 @@ CAMLprim value caml_http_response_init(value unit) {
     return (value)http_response_init();
 }
 
+CAMLprim value caml_http_request_has_flag(value v_req, value v_flag) {
+    struct http_request_s* req = (struct http_request_s*)v_req;
+    return Val_int(http_request_has_flag(req, Int_val(v_flag)));
+}
+
 CAMLprim value caml_http_response_status(value v_resp, value v_status) {
     struct http_response_s* resp = (struct http_response_s*)v_resp;
     http_response_status(resp, Int_val(v_status));
@@ -47,29 +52,38 @@ CAMLprim value caml_http_respond(value v_req, value v_resp) {
 
 CAMLprim value caml_http_request_method(value v_req) {
     struct http_request_s* req = (struct http_request_s*)v_req;
-    struct http_string_s mth = http_request_method(req);
-    printf("[C] %s\n", mth.buf);
-    return caml_copy_string("GET THIS");
+    struct http_string_s ret = http_request_method(req);
+    char tmp[100];
+    strncpy(tmp, ret.buf, ret.len);
+    tmp[ret.len] = '\0';
+    return caml_copy_string(tmp);
 }
 
 CAMLprim value caml_http_request_body(value v_req) {
     struct http_request_s* req = (struct http_request_s*)v_req;
-    struct http_string_s body = http_request_body(req);
-    printf("[C] len=%d %s\n", body.len, body.buf);
-    return caml_copy_string(body.buf);
+    struct http_string_s ret = http_request_body(req);
+    char tmp[100];
+    strncpy(tmp, ret.buf, ret.len);
+    tmp[ret.len] = '\0';
+    return caml_copy_string(tmp);
 }
 
 CAMLprim value caml_http_request_target(value v_req) {
     struct http_request_s* req = (struct http_request_s*)v_req;
-    struct http_string_s body = http_request_target(req);
-    printf("[C] target len=%d %s\n", body.len, body.buf);
-    return caml_copy_string(body.buf);
+    struct http_string_s ret = http_request_target(req);
+    char tmp[100];
+    strncpy(tmp, ret.buf, ret.len);
+    tmp[ret.len] = '\0';
+    return caml_copy_string(tmp);
 }
 
 CAMLprim value caml_http_request_header(value v_req, value v_key) {
     struct http_request_s* req = (struct http_request_s*)v_req;
     struct http_string_s ret = http_request_header(req, String_val(v_key));
-    return caml_copy_string(ret.buf);
+    char tmp[100];
+    strncpy(tmp, ret.buf, ret.len);
+    tmp[ret.len] = '\0';
+    return caml_copy_string(tmp);
 }
 
 void handle_request(struct http_request_s* request) {
