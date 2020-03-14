@@ -1,16 +1,23 @@
 let printf = Printf.printf
 
-let hack () =
-    "hello, world!"
+module R=Httph.Request
 
-let hack2 request =
-    let mth = Httph.http_request_method request in
+let hack2 request response =
+    let mth = R.method' request in
+    Httph.Response.status response 200;
+    Httph.Response.header response "Content-Type" "text/plain";
     match mth with
-    | "GET" -> "GOT IT " ^ (Httph.http_request_target request)
-    | _ -> "NOTAGET"
+    | "GET" -> 
+            Httph.Response.body response ("Got " ^ (R.target request));
+            ()
+    | _ ->
+            Httph.Response.body response "Not a GET";
+            ()
 
 let () =
+    (*
     let hr = Httph.http_response_init () in
     Httph.http_response_status hr 200;
     Httph.http_response_header hr "Content-Type" "text/plain";
+    *)
     Httph.http_server_init hack2 9000

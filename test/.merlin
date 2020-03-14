@@ -1,6 +1,16 @@
 EXCLUDE_QUERY_DIR
+B /Users/tbrady/.opam/4.09.0/lib/re
+B /Users/tbrady/.opam/4.09.0/lib/re/posix
+B /Users/tbrady/.opam/4.09.0/lib/seq
+B /Users/tbrady/.opam/4.09.0/lib/stringext
+B /Users/tbrady/.opam/4.09.0/lib/uri
 B ../_build/default/lib/.httph.objs/byte
 B ../_build/default/test/.hello_world.eobjs/byte
+S /Users/tbrady/.opam/4.09.0/lib/re
+S /Users/tbrady/.opam/4.09.0/lib/re/posix
+S /Users/tbrady/.opam/4.09.0/lib/seq
+S /Users/tbrady/.opam/4.09.0/lib/stringext
+S /Users/tbrady/.opam/4.09.0/lib/uri
 S ../lib
 S .
 FLG -w @1..3@5..28@30..39@43@46..47@49..57@61..62-40 -strict-sequence -strict-formats -short-paths -keep-locs

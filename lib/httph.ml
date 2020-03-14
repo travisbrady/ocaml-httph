@@ -1,7 +1,5 @@
-
 type _http_request
 type http_response
-external hello : unit -> unit = "caml_hello"
 external http_response_init : unit -> http_response = "caml_http_response_init"
 external http_response_status : http_response -> int -> unit = "caml_http_response_status"
 external http_response_header : http_response -> string -> string -> unit = "caml_http_response_header"
@@ -24,3 +22,18 @@ type http_request = {
 let http_server_init f port =
     let _ = Callback.register "caml_handle_request" f in
     _http_server_init port
+
+module Request = struct
+    type t = _http_request
+    let method' t = http_request_method t
+    let body t = http_request_body t
+    let target t = http_request_target t
+    let header t = http_request_header t
+end
+
+module Response = struct
+    type t = http_response
+    let status t status_code = http_response_status t status_code
+    let header t key value = http_response_header t key value
+    let body t body = http_response_body t body
+end
