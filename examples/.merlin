@@ -1,21 +1,11 @@
 EXCLUDE_QUERY_DIR
 B /Users/tbrady/.opam/4.09.0/lib/biniou
 B /Users/tbrady/.opam/4.09.0/lib/easy-format
-B /Users/tbrady/.opam/4.09.0/lib/re
-B /Users/tbrady/.opam/4.09.0/lib/re/posix
-B /Users/tbrady/.opam/4.09.0/lib/seq
-B /Users/tbrady/.opam/4.09.0/lib/stringext
-B /Users/tbrady/.opam/4.09.0/lib/uri
 B /Users/tbrady/.opam/4.09.0/lib/yojson
 B ../_build/default/examples/.techempower.eobjs/byte
 B ../_build/default/lib/.httph.objs/byte
 S /Users/tbrady/.opam/4.09.0/lib/biniou
 S /Users/tbrady/.opam/4.09.0/lib/easy-format
-S /Users/tbrady/.opam/4.09.0/lib/re
-S /Users/tbrady/.opam/4.09.0/lib/re/posix
-S /Users/tbrady/.opam/4.09.0/lib/seq
-S /Users/tbrady/.opam/4.09.0/lib/stringext
-S /Users/tbrady/.opam/4.09.0/lib/uri
 S /Users/tbrady/.opam/4.09.0/lib/yojson
 S .
 S ../lib

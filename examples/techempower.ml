@@ -1,6 +1,5 @@
 module H=Httph
 
-
 let handle_request request response =
     H.Response.status response 200;
     match (H.Request.target request) with
@@ -17,4 +16,5 @@ let handle_request request response =
             H.Response.body response "<h1>Not Found</h1>"
 
 let () =
-    Httph.http_server_init handle_request 9000
+    Printf.printf "Hi\n%!";
+    Httph.http_server_init handle_request 8080

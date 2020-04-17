@@ -4,5 +4,5 @@
  (foreign_stubs
   (language c)
   (names mystubs)
-  (flags -I./lib))
+  (flags -O3 -I./lib))
  )

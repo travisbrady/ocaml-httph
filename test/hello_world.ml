@@ -15,9 +15,4 @@ let hack2 request response =
             ()
 
 let () =
-    (*
-    let hr = Httph.http_response_init () in
-    Httph.http_response_status hr 200;
-    Httph.http_response_header hr "Content-Type" "text/plain";
-    *)
     Httph.http_server_init hack2 9000
