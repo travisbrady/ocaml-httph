@@ -88,7 +88,7 @@ void handle_request(struct http_request_s* request) {
     http_respond(request, response);
 }
 
-CAMLprim value caml_http_server_init(value v_port) {
+void caml_http_server_init(value v_port) {
     struct http_server_s* server =
         http_server_init(Int_val(v_port), handle_request);
     http_server_listen(server);
