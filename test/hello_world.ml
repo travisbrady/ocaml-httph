@@ -14,4 +14,7 @@ let hack2 request response =
       Httph.Response.body response "Not a GET" ;
       ()
 
-let () = Httph.http_server_init hack2 9000
+let () =
+  let port = 9000 in
+  Printf.eprintf "\027[32m[INFO] \027[0m Listening on %d\n%!" port ;
+  Httph.http_server_init hack2 port

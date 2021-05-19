@@ -17,5 +17,5 @@ let handle_request request response =
 
 let () =
   let port = 8080 in
-  Printf.printf "Listening on %d\n%!" port ;
+  Printf.eprintf "\027[32m[INFO] \027[0m Listening on %d\n%!" port;
   Httph.http_server_init handle_request 8080
