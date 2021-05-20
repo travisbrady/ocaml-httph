@@ -1,0 +1,22 @@
+lib: [
+  "_build/install/default/lib/httph/META"
+  "_build/install/default/lib/httph/dune-package"
+  "_build/install/default/lib/httph/httph.a"
+  "_build/install/default/lib/httph/httph.cma"
+  "_build/install/default/lib/httph/httph.cmi"
+  "_build/install/default/lib/httph/httph.cmt"
+  "_build/install/default/lib/httph/httph.cmx"
+  "_build/install/default/lib/httph/httph.cmxa"
+  "_build/install/default/lib/httph/httph.ml"
+  "_build/install/default/lib/httph/libhttph_stubs.a"
+  "_build/install/default/lib/httph/opam"
+]
+libexec: [
+  "_build/install/default/lib/httph/httph.cmxs"
+]
+doc: [
+  "_build/install/default/doc/httph/README.md"
+]
+stublibs: [
+  "_build/install/default/lib/stublibs/dllhttph_stubs.so"
+]
