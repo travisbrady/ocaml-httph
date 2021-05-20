@@ -1220,7 +1220,7 @@ void http_listen(http_server_t* serv, const char* ipaddr) {
   signal(SIGPIPE, SIG_IGN);
   serv->socket = socket(AF_INET, SOCK_STREAM, 0);
   int flag = 1;
-  setsockopt(serv->socket, SOL_SOCKET, SO_REUSEPORT, &flag, sizeof(flag));
+  setsockopt(serv->socket, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(flag));
   hs_bind_localhost(serv->socket, &serv->addr, ipaddr, serv->port);
   serv->len = sizeof(serv->addr);
   int flags = fcntl(serv->socket, F_GETFL, 0);
